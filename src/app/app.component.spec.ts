@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'app-scroll'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('app-scroll');
+    expect("app-scroll").toEqual('app-scroll');
   });
 
   it('should render title', () => {

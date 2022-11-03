@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello.component';
+import { ModalComponent } from './modal/modal.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
+
 
 @NgModule({
+  imports: [BrowserModule, FormsModule, InfiniteScrollModule],
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent,
+    ModalComponent,
+    ScrollToBottomDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
