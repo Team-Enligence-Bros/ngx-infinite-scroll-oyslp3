@@ -12,7 +12,7 @@ const nisPackage = require('../../package.json');
 
 @Component({
   selector: 'my-app',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
