@@ -7,12 +7,12 @@ import {
   Component,
 } from '@angular/core';
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
-
+// for a pull req
 const nisPackage = require('../../package.json');
 
 @Component({
   selector: 'my-app',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {

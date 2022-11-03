@@ -14,4 +14,4 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-      - run: ng build --configuration=producrion
+      - run: npm run build -- --prod
