@@ -1,0 +1,27 @@
+<!-- <h1 class="title well">
+  ngx-infinite-scroll v-{{ nisVersion }}
+  <section>
+    <small>items: {{ sum }}, now triggering scroll: {{ direction }}</small>
+  </section>
+  <section>
+    <button class="btn btn-info" (click)="toggleModal()">
+      Open Infinite Scroll in Modal
+    </button>
+  </section>
+</h1>
+<modal *ngIf="modalOpen" (onClose)="toggleModal()"></modal> -->
+<div
+  #scrollMe
+  [scrollTop]="scrollMe.scrollHeight"
+  class="search-results"
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle"
+  (scrolled)="onScrollDown()"
+  (scrolledUp)="onUp()"
+>
+  <p *ngFor="let i of array">
+    {{ i }}
+  </p>
+</div>
