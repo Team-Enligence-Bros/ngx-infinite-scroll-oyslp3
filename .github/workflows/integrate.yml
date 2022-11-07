@@ -3,9 +3,11 @@ name: Ng Continuous Integration
 on:
   pull_request:
     branches: [ master ]
+    # auto_merge_enabled: true
 
 
 jobs:
+  # enable-auto-merge
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
