@@ -7,7 +7,7 @@ import {
   Component,
 } from '@angular/core';
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
-// for a pull req
+// for a pull req  fgl
 const nisPackage = require('../../package.json');
 
 @Component({
