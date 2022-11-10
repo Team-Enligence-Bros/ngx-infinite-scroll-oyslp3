@@ -17,3 +17,11 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run build -- --prod
+      
+      - name: Check Whether the build passed or failed
+        uses: dorny/test-reporter@v1
+        if: failure()
+        with:
+          name: Failed Task
+          path: reports/jest-*.xml    # Path to test results
+          reporter: sandeep 
