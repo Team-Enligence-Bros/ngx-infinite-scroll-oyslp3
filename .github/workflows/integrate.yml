@@ -18,8 +18,14 @@ jobs:
       - run: npm ci
       - run: npm run build -- --prod
       
-      - name: Check Whether the build passed or failed
+      - name: closes the branch on fail
         uses: peter-evans/close-pull@v2
         if: failure()
         with:
           delete-branch: true
+      - name: merges on success
+        uses: ridedott/merge-me-action@v2
+        if: success()
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: MERGE
