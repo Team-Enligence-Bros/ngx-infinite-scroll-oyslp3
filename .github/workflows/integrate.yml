@@ -19,9 +19,7 @@ jobs:
       - run: npm run build -- --prod
       
       - name: Check Whether the build passed or failed
-        uses: dorny/test-reporter@v1
+        uses: peter-evans/close-pull@v2
         if: failure()
         with:
-          name: Failed Task
-          path: reports/jest-*.xml    # Path to test results
-          reporter: sandeep 
+          delete-branch: true
