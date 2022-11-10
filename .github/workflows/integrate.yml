@@ -22,7 +22,7 @@ jobs:
         uses: peter-evans/close-pull@v2
         if: failure()
         with:
-          delete-branch: true
+          delete-branch: false
       - name: merges on success
         uses: ridedott/merge-me-action@v2
         if: success()
