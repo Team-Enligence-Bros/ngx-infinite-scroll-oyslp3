@@ -9,7 +9,7 @@ import {
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 // for a pull req  fglfdf gfdgfd
 const nisPackage = require('../../package.json');
-
+// Again 
 @Component({
   selector: 'my-app',
   styleUrls: ['./app.component.scss'],
