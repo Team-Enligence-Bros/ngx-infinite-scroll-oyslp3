@@ -6,6 +6,7 @@ import {
   OnInit,
   Component,
 } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 // for a pull req  fglfdf gfdgfd
 const nisPackage = require('../../package.json');
@@ -25,18 +26,21 @@ export class AppComponent implements OnInit {
   scrollUpDistance = 2;
   direction = '';
   modalOpen = false;
+  words = ["def"]
+
 
   nisVersion = nisPackage.dependencies['ngx-infinite-scroll'];
 
   ngOnInit() {}
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.appendItems(0, this.sum);
   }
 
   addItems(startIndex: any, endIndex: any, _method: any) {
     for (let i = 0; i < this.sum; ++i) {
-      this.array[_method]([i, ' ', this.generateWord()].join(''));
+      this.generateWord()
+      this.array[_method]([i, ' ', this.words[this.words.length - 1]].join(''));
     }
   }
 
@@ -68,10 +72,21 @@ export class AppComponent implements OnInit {
     this.direction = 'up';
   }
   generateWord() {
-    return "Sandeep"
+    
+    console.log(this.array)
+    return this.http.get("http://3.111.102.2:3000/hello/").subscribe(
+      (data: any) => {
+        this.words.push(data['data'])
+      }
+    )
+
   }
 
   toggleModal() {
     this.modalOpen = !this.modalOpen;
   }
+}
+
+interface Ans {
+  data: string
 }
