@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -10,12 +11,12 @@ import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, InfiniteScrollModule],
+  imports: [BrowserModule, FormsModule, InfiniteScrollModule, HttpClientModule],
   declarations: [
     AppComponent,
     HelloComponent,
     ModalComponent,
-    ScrollToBottomDirective,
+    ScrollToBottomDirective
   ],
   bootstrap: [AppComponent],
 })
