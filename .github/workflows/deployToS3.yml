@@ -25,6 +25,7 @@ jobs:
         AWS_REGION: 'ap-south-1'
         SOURCE_DIR: 'dist'
     - name: reject a commit on failure
+      if: failure()
       uses: exions/undo-push@v1
       with:
         branch: ${{ github.event.inputs.branch }}
