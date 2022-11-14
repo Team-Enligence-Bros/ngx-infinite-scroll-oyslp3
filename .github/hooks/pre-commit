@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pass=true
 RED='\033[1;31m'
