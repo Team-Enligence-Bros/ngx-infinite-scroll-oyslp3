@@ -1,25 +1,25 @@
-name: Ng Continuous Integration
+# name: Ng Continuous Integration
 
-on:
-  pull_request:
-    branches: [ master ]
-    # auto_merge_enabled: true
+# on:
+#   pull_request:
+#     branches: [ master ]
+#     # auto_merge_enabled: true
 
 
-jobs:
-  # enable-auto-merge
-  test_pull_request:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm run build -- --prod
+# jobs:
+#   # enable-auto-merge
+#   test_pull_request:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - run: npm ci
+#       - run: npm run build -- --prod
       
-      - name: closes the branch on fail
-        uses: peter-evans/close-pull@v2
-        if: failure()
-        with:
-          delete-branch: false
+#       - name: closes the branch on fail
+#         uses: peter-evans/close-pull@v2
+#         if: failure()
+#         with:
+#           delete-branch: false
