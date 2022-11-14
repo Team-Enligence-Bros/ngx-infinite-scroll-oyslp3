@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
-// for a pull req  fglfdf gfdgfd  
+for a pull req  fglfdf gfdgfd  
 const nisPackage = require('../../package.json');
 // Again 
 @Component({
