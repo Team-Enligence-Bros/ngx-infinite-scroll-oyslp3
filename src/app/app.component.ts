@@ -74,7 +74,7 @@ export class AppComponent implements OnInit {
   generateWord() {
     
     console.log(this.array)
-    return this.http.get("http://3.111.102.2:3000/hello/").subscribe(
+    return this.http.get("http://ec2-15-207-248-162.ap-south-1.compute.amazonaws.com:3000/").subscribe(
       (data: any) => {
         this.words.push(data['data'])
       }
